@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+/*후에 페이지 전체에 걸쳐 색상을 변경해야 할 경우 유용하다*/
+:root{
+    --success-color:  #2ecc71;
+    --error-color: #e74c3c;
+}
+
+*{
+    /* 모든 프로젝트에 적용하는 디폴트 */
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#fff;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* vertically center setting */
+    min-height: 100vh; /*view height아니고 vertical height*/
+    margin: 0;
+
+
+    
+}
+
+.container{
+    /* border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);  */
+    /* for drow shadow */
+
+    width: 400px;
+    /* 왜 height는 설정하지 않지 */
+    /* height를 설정하지않았기에 컨테이너가 쭉 늘어나지 않는다 */
+
+    /* background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgb(174, 174, 192, 0.5),
+    -10px -10px 30px rgba(255, 255, 255); */
+
+    border-radius: 17px;
+    /* background: linear-gradient(315deg, #ffffff, #e6e1e1); */
+    box-shadow:  -5px -5px 3px #d4d0d0,
+                 3px 3px 1px #f0f0f0;
+}
+
+h2{
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    /* border: 0.2px; */
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%; 
+    padding: 10px;
+    font-size: 14px;
+
+
+    border-radius: 7px;
+    /* background: #fffafa; */
+    box-shadow: inset -5px -5px 10px #ede9e9, 
+                inset -5px -5px 10px #ffffff;
+}
+
+.form-control input:focus{
+    outline: 0;
+    border-color: #777;
+    /* border:none */
+}
+
+.form-control.success input{
+    border-color: var(--success-color);
+}
+.form-control.error input{
+    border-color: var(--error-color);
+}
+
+.form-control small{
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+
+.form-control.error small{
+    visibility: visible;
+}
+.form button{
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+
+@media screen and (min-width:950px) {
+    .container {
+      width: 650px;
+    }
+    .form button {
+      width: 50%;
+      margin-left: auto;
+    }
+}
